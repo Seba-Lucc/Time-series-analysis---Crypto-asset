@@ -23,10 +23,10 @@ The LSTM model is a deep learning technique evolved from Recurrent Neural Networ
 	•	For LSTM, data is normalized and structured into a supervised learning format (windowed sequences).
 
 ## Modeling & Training:
-•	ARIMA:
+### ARIMA:
 	•	The model’s parameters (p, d, q) are selected using techniques like the AIC and PACF/ACF plots.
 	•	The ARIMA model is fitted to the training data and used to generate forecasts.
-•	LSTM:
+### LSTM:
 	•	An LSTM architecture is defined with layers appropriate for handling time series sequences.
 	•	The LSTM model is trained on the normalized windowed data, learning from historical patterns to predict future prices.
 	
