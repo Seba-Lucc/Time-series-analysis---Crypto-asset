@@ -17,26 +17,26 @@ The LSTM model is a deep learning technique evolved from Recurrent Neural Networ
 
 # Techniques and Steps
 ## Data Collection & Preprocessing:
-	•	Historical Bitcoin price data is fetched using yfinance and then cleaned and prepared for modeling.
-	•	The dataset is split into training and testing sets.
-	•	For ARIMA, differencing and stationarity checks are applied as needed.
-	•	For LSTM, data is normalized and structured into a supervised learning format (windowed sequences).
+1. Historical Bitcoin price data is fetched using yfinance and then cleaned and prepared for modeling.
+2. The dataset is split into training and testing sets.
+3. For ARIMA, differencing and stationarity checks are applied as needed.
+4. For LSTM, data is normalized and structured into a supervised learning format (windowed sequences).
 
 ## Modeling & Training:
 ### ARIMA:
-	•	The model’s parameters (p, d, q) are selected using techniques like the AIC and PACF/ACF plots.
-	•	The ARIMA model is fitted to the training data and used to generate forecasts.
+1. The model’s parameters (p, d, q) are selected using techniques like the AIC and PACF/ACF plots.
+2. The ARIMA model is fitted to the training data and used to generate forecasts.
 ### LSTM:
-	•	An LSTM architecture is defined with layers appropriate for handling time series sequences.
-	•	The LSTM model is trained on the normalized windowed data, learning from historical patterns to predict future prices.
+1. An LSTM architecture is defined with layers appropriate for handling time series sequences.
+2. The LSTM model is trained on the normalized windowed data, learning from historical patterns to predict future prices.
 	
  ## Model Evaluation & Comparison:
-	•	The predictions from both models are compared against the test set using metrics such as RMSE or MAE.
-	•	Visualization tools are used to plot predicted vs. actual prices, highlighting strengths and weaknesses of each approach.
+1. The predictions from both models are compared against the test set using metrics such as RMSE or MAE.
+2. Visualization tools are used to plot predicted vs. actual prices, highlighting strengths and weaknesses of each approach.
 
 ## Interpretation:
-	•	We discuss the results, assessing which model performs better under various conditions.
-	•	The project also offers insights into the complexities of forecasting high-volatility assets like Bitcoin.
+1. We discuss the results, assessing which model performs better under various conditions.
+2. The project also offers insights into the complexities of forecasting high-volatility assets like Bitcoin.
 
 
 ## Library
