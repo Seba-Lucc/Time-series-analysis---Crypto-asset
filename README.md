@@ -44,11 +44,14 @@ The LSTM model is a deep learning technique evolved from Recurrent Neural Networ
 Analysis: numpy, pandas, yfinance
 Rappresentation: matplotlib, plotly 
 Model implementation: statsmodels, sklearn
-	•	pip install numpy, pandas, yfinance, matplotlib, plotly, statsmodels, sklearn
+	
+ 	•	pip install numpy, pandas, yfinance, matplotlib, plotly, statsmodels, sklearn
+
 ### LSTM
 Analysis: numpy, pandas, yfinance 
 Rappresentation: matplotlib, plotly 
 Model implementation: sklearn, tensorflow, keras
-	•	pip install numpy, pandas, yfinance, matplotlib, plotly, sklearn, tensorflow, keras
+	
+ 	•	pip install numpy, pandas, yfinance, matplotlib, plotly, sklearn, tensorflow, keras
 
 
