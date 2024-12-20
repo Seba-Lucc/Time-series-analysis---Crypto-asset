@@ -17,8 +17,8 @@ The LSTM model is a deep learning technique evolved from Recurrent Neural Networ
 
 # Techniques and Steps
 ## Data Collection & Preprocessing:
-		Historical Bitcoin price data is fetched using yfinance and then cleaned and prepared for modeling.
-		The dataset is split into training and testing sets.
+### Historical Bitcoin price data is fetched using yfinance and then cleaned and prepared for modeling.
+### The dataset is split into training and testing sets.
 		For ARIMA, differencing and stationarity checks are applied as needed.
 		For LSTM, data is normalized and structured into a supervised learning format (windowed sequences).
 
