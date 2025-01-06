@@ -39,5 +39,3 @@ The **Long Short-Term Memory (LSTM)** architecture was introduced by Hochreiter 
   - Widely used in Natural Language Processing (NLP), time series analysis, and speech recognition tasks.
 
 ---
-
-Feel free to adapt this content for your use case!
