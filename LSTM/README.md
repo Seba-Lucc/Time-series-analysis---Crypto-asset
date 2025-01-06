@@ -66,7 +66,7 @@ The LSTM model was adapted to perform **price forecasting** for **financial time
 
 To replicate the experiment:
 1. **Download the BTC:USD dataset**:
-   - Use the `yfinance` library, ensuring the correct time intervals (e.g., daily, monthly) are specified.
+   - Use the `yfinance` library, ensuring the correct time intervals (e.g., daily, monthly) are specified. At the moment of the project delay the timeseries for minutes is delisted, fell free to try with other              timeseries with the same duration, the daily series is still perfectly runnable. 
 2. **Feature Selection**:
    - Decide whether to use only the **Close** series or include additional features.
 3. **Model Training**:
