@@ -60,7 +60,11 @@ The optimal parameters `(p, d, q)` for the ARIMA model are selected using ACF an
    - The target column (`Close`) is selected and made stationary using differencing if needed.
 
 2. **ACF and PACF Analysis**:
-   - Auto-Correlation Function (ACF) and Partial Auto-Correlation Function (PACF) plots are generated to guide the selection of ARIMA parameters.
+   - MINIC (Minimum Information Criterion): this method utilises the Akaike Information Criterion (AIC) to select the optimal values of `p` and `q`. The AIC evaluates model quality by balancing goodness-of-fit with model complexity. A range of value combinations is tested, and the one with the lowest AIC value is selected as the optimal choice.
+
+   - SCAN: this technique focuses on analysing the residuals of the ARIMA model for each combination of `p` and `q`. The quality of the residuals is assessed through the autocorrelation function (ACF) and the partial autocorrelation function (PACF). The model with the highest-quality residuals—those closest to the absence of correlation—is selected.
+
+   - ESACF (Extended Sample Autocorrelation Function): this approach provides extended ACF and PACF plots to enable manual selection of the parameters `p` and `q`. Users can visually inspect the patterns in the plots to identify appropriate values.
 
 3. **Model Training**:
    - The ARIMA model is trained on the processed time series data.
@@ -77,8 +81,7 @@ The optimal parameters `(p, d, q)` for the ARIMA model are selected using ACF an
 
 To evaluate the ARIMA model's performance, the following metrics are calculated:
 1. **Mean Absolute Error (MAE)**: Average magnitude of errors in the predictions.
-2. **Mean Squared Error (MSE)**: Penalizes larger errors more than smaller ones.
-3. **Root Mean Squared Error (RMSE)**: Provides a measure of error in the same units as the target variable.
+2. **Root Mean Squared Error (RMSE)**: Provides a measure of error in the same units as the target variable.
 
 ---
 
@@ -96,5 +99,37 @@ Ensure the following Python libraries are installed:
 ### **Running the Notebook**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bitcoin-arima.git
-   cd bitcoin-arima
+   git clone https://github.com/Seba-Lucc/Time-series-analysis---Crypto-asset.git
+
+2.	Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+3.	Open the notebook:
+   ```bash
+   jupyter notebook ARIMA.ipynb
+
+4.	Run all cells in sequence to reproduce the analysis.
+
+---
+
+## **Future Improvements**
+
+To enhance the accuracy and usability of the model:
+	1.	Feature Engineering:
+	•	Include additional predictors like trading volume, economic indicators, and sentiment analysis.
+	2.	Advanced Models:
+	•	Explore other models such as SARIMA, SARIMAX, or hybrid models combining ARIMA with machine learning approaches.
+	3.	Hyperparameter Optimization:
+	•	Use automated tools (e.g., Grid Search) to fine-tune ARIMA parameters.
+
+---
+
+## **Contributions**
+Contributions are welcome! If you encounter issues or have suggestions for improvement, feel free to submit a pull request or open an issue.
+
+---
+
+## **License**
+This project is licensed under the MIT License. See the LICENSE file for details.
+
