@@ -116,11 +116,13 @@ Ensure the following Python libraries are installed:
 ## **Future Improvements**
 
 To enhance the accuracy and usability of the model:
-	1.	Feature Engineering:
+1.	Feature Engineering:
 	•	Include additional predictors like trading volume, economic indicators, and sentiment analysis.
-	2.	Advanced Models:
+	
+ 2.	Advanced Models:
 	•	Explore other models such as SARIMA, SARIMAX, or hybrid models combining ARIMA with machine learning approaches.
-	3.	Hyperparameter Optimization:
+	
+ 3.	Hyperparameter Optimization:
 	•	Use automated tools (e.g., Grid Search) to fine-tune ARIMA parameters.
 
 ---
