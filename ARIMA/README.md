@@ -101,19 +101,19 @@ Ensure the following Python libraries are installed:
    ```bash
    git clone https://github.com/Seba-Lucc/Time-series-analysis---Crypto-asset.git
 
-2.	Install dependencies:
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
 
-3.	Open the notebook:
+3. Open the notebook:
    ```bash
    jupyter notebook ARIMA.ipynb
 
-4.	Run all cells in sequence to reproduce the analysis.
+4. Run all cells in sequence to reproduce the analysis.
 
 ---
 
-## **Future Improvements**
+ **Future Improvements**
 
 To enhance the accuracy and usability of the model:
 	1.	Feature Engineering:
@@ -131,4 +131,4 @@ Contributions are welcome! If you encounter issues or have suggestions for impro
 ---
 
 ## **License**
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the Apache License. See the LICENSE file for details.
