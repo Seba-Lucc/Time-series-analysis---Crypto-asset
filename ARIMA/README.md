@@ -100,7 +100,8 @@ Ensure the following Python libraries are installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Seba-Lucc/Time-series-analysis---Crypto-asset.git
-
+   cd ARIMA
+   
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -116,19 +117,19 @@ Ensure the following Python libraries are installed:
 ## **Future Improvements**
 
 To enhance the accuracy and usability of the model:
-1.	Feature Engineering:
-	•	Include additional predictors like trading volume, economic indicators, and sentiment analysis.
+1. Feature Engineering:
+	• Include additional predictors like trading volume, economic indicators, and sentiment analysis.
 	
- 2.	Advanced Models:
-	•	Explore other models such as SARIMA, SARIMAX, or hybrid models combining ARIMA with machine learning approaches.
+ 2. Advanced Models:
+	• Explore other models such as SARIMA, SARIMAX, or hybrid models combining ARIMA with machine learning approaches.
 	
- 3.	Hyperparameter Optimization:
-	•	Use automated tools (e.g., Grid Search) to fine-tune ARIMA parameters.
+ 3. Hyperparameter Optimization:
+	• Use automated tools (e.g., Grid Search) to fine-tune ARIMA parameters.
 
 ---
 
 ## **Contributions**
-Contributions are welcome! If you encounter issues or have suggestions for improvement, feel free to submit a pull request or open an issue.
+Contributions to this project are welcome! Feel free to open an issue or submit a pull request to suggest improvements or fix bugs.
 
 ---
 
