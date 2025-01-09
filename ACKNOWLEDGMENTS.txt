@@ -1,0 +1,24 @@
+ACKNOWLEDGMENTS
+
+The authors of this project acknowledge the use of open-source tools and resources that were instrumental in the development of this work. Specifically, we would like to thank:
+	•	yfinance, which served as a reference library for datasets and preliminary exploratory analyses.
+	•	ChatGPT, a Generative AI platform, which supported coding assistance, debugging, and documentation.
+
+The project focuses on comparing statistical (ARIMA) and deep learning (LSTM) methods for time series analysis of Bitcoin’s historical prices.
+
+Authors’ Contributions:
+	•	[Martina_Butti]: Conducted in-depth research on ARIMA models, including parameter tuning and performance evaluation.
+	•	[Sebastiano_Luccheti]: Developed and implemented the LSTM model for the deep learning part of the analysis.
+	•	[Sebastiano_Lucchetti]: Debugged the codebase using tools like Visual Studio Code and assisted with integrating various components of the pipeline.
+	•	[Team Effort]: Collaboratively prepared the final version of the code, ensuring consistency across both ARIMA and LSTM methodologies, and wrote the documentation.
+
+Tools and Platforms Used:
+	•	Python Libraries: pandas, numpy, yfinance, matplotlib, keras, statsmodels, sklearn.
+	•	Development Environment: Jupyter Notebook, Visual Studio Code.
+	•	Version Control: GitHub.
+
+The project repository contains all relevant materials, including the analysis, models, and documentation, structured to ensure reproducibility and clarity for future studies.
+  - We point out that minutes dataset need an accurate selection, while yfinance cancels recursively minutes' datasets 
+
+We express our gratitude to the open-source community and educational platforms that enabled us to deepen our understanding of time series analysis.
+**A special thanks to professor Alessandro Bruno for stimulating and supporting us during the entire developing process.**
