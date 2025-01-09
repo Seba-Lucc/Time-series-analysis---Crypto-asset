@@ -113,7 +113,7 @@ Ensure the following Python libraries are installed:
 
 ---
 
- **Future Improvements**
+## **Future Improvements**
 
 To enhance the accuracy and usability of the model:
 	1.	Feature Engineering:
