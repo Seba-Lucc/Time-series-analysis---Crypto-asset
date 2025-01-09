@@ -1,85 +1,146 @@
-# LSTM Architecture and Financial Time Series Forecasting
+# **Bitcoin Price Prediction with LSTM**
 
-This project explores the application of the **Long Short-Term Memory (LSTM)** neural network architecture for **financial time series forecasting**. Specifically, it focuses on predicting the price of Bitcoin (BTC:USD) using a dataset downloaded from **yfinance**.
-
----
-
-## LSTM Architecture Overview
-
-The **LSTM** was introduced by Hochreiter and Schmidhuber in 1997 as an enhancement of Recurrent Neural Networks (RNNs) to address the **Vanishing Gradient problem**. Its design enables the capture of long-term dependencies in sequential data through a combination of memory states and gated mechanisms.
-
-### Key Components of the LSTM
-
-1. **Cell State (\(C_t\))**:
-   - Serves as the network's long-term memory, capable of retaining, updating, or discarding information across time steps.
-
-2. **Hidden State (\(h_t\))**:
-   - Acts as short-term memory, influencing the network’s output at each step.
-
-3. **Gated Mechanism**:
-   - Regulates the flow of information:
-     - **Input Gate (\(i_t\))**: Decides the amount of new information to add to the cell state.
-     - **Forget Gate (\(f_t\))**: Determines what information from the previous state should be discarded.
-     - **Output Gate (\(o_t\))**: Controls which portion of the cell state contributes to the output and updates the hidden state.
-
-### Core Functionality of LSTM
-For each time step \(t\), the LSTM performs the following operations:
-- Updates the **cell state** by combining previous memory (\(C_{t-1}\)), input data (\(x_t\)), and hidden state (\(h_{t-1}\)).
-- Adjusts **hidden state** based on the gated mechanisms to produce the current output.
+This repository contains a Jupyter Notebook that implements an LSTM (Long Short-Term Memory) model for predicting the closing price of Bitcoin using historical data. The notebook provides a complete pipeline for data processing, model training, evaluation, and visualization of the results.
 
 ---
 
-## Project Description
-
-The LSTM model was adapted to perform **price forecasting** for **financial time series** data, specifically Bitcoin (BTC:USD). The dataset was obtained using **yfinance**, and the model was trained and tested with varying time steps and feature sets.
-
-### Dataset and Preprocessing
-- **Source**: BTC:USD data downloaded from yfinance.
-- **Time Steps**:
-  - **Monthly**: The primary focus of the project, aiming to predict the precise price at time \(t\).
-  - **Daily and Minute**: Additional tests were conducted using higher-frequency data to compare performance.
-- **Features**:
-  - Model 1: Trained using only the **Close** series, similar to ARIMA-based analysis.
-  - Model 2: Trained using **Open**, **Low**, **High**, **Close**, and **Volume**.
-
-### Key Observations
-- Models trained with **daily data** performed better than those trained with **monthly data**.
-  - Likely due to the model's difficulty in adapting to the higher variance in the monthly series.
-- Incorporating additional features (**Open**, **Low**, **High**, and **Volume**) slightly improved the model's predictive accuracy.
-
-### Challenges and Considerations
-- **Data Integrity**: Ensure proper handling of time intervals when downloading data from yfinance.
-- **Reproducibility**:
-  - Verify that the dataset has been successfully downloaded.
-  - Align training data intervals with the desired time step for consistent results.
+## **Table of Contents**
+1. [Overview](#overview)
+2. [Data Source](#data-source)
+3. [Model Description](#model-description)
+4. [Pipeline Workflow](#pipeline-workflow)
+5. [Evaluation Metrics](#evaluation-metrics)
+6. [Usage](#usage)
+7. [Future Improvements](#future-improvements)
+8. [Contributions](#contributions)
+9. [License](#license)
 
 ---
 
-## Results and Insights
+## **Overview**
 
-- The **daily model** achieved better accuracy and robustness due to its ability to capture smaller-scale patterns and less pronounced variance differences.
-- The use of LSTM, compared to simpler statistical models like ARIMA, demonstrated superior capability in handling complex temporal relationships across multiple features.
-
----
-
-## Reproducibility
-
-To replicate the experiment:
-1. **Download the BTC:USD dataset**:
-   - Use the `yfinance` library, ensuring the correct time intervals (e.g., daily, monthly) are specified. At the moment of the project delay the timeseries for minutes is delisted, fell free to try with other              timeseries with the same duration, the daily series is still perfectly runnable. 
-2. **Feature Selection**:
-   - Decide whether to use only the **Close** series or include additional features.
-3. **Model Training**:
-   - Adjust hyperparameters (e.g., learning rate, batch size) based on the time step used.
-4. **Evaluation**:
-   - Test models on both short-term and long-term data intervals for comparative analysis.
+The project demonstrates how to use an LSTM neural network to predict the price of Bitcoin based on historical data. The goal is to capture the temporal patterns in the data to make accurate short-term predictions. The notebook includes all necessary steps for:
+- Preprocessing raw Bitcoin price data.
+- Training a predictive model using LSTM.
+- Evaluating the model's performance.
+- Visualizing the predictions alongside actual values.
 
 ---
 
-## Conclusion
+## **Data Source**
 
-This project highlights the flexibility and effectiveness of LSTMs in forecasting financial time series data. By leveraging the gated mechanism, LSTMs excel at capturing both short-term and long-term dependencies, making them a robust choice for tasks requiring sequential data analysis.
+The historical data for Bitcoin is retrieved using the `yfinance` library. The dataset includes:
+- **Date**: the trading date.
+- **Close**: the closing price of Bitcoin for each day.
+- **High**: the highest price of Bitcoin for each day.
+- **Low**: the lowest price of Bitcoin for each day.
+- **Open**: the opening price of Bitcoin for each day.
+- **Volume**: the volume of Bitcoin for each day.
+
+### **Preprocessing Steps:**
+1. Normalization: features are scaled to the range [0, 1] for better model performance.
+2. Sequence Preparation: data is transformed into sequences of fixed length (`seq_length`) to serve as input to the LSTM model.
+3. Train-Test Split: the data is split into training and testing subsets.
 
 ---
 
-For any questions or further details, feel free to reach out!
+## **Model Description**
+
+The predictive model is based on an LSTM architecture:
+- **LSTM Layer**: Captures temporal dependencies in the data.
+- **Dense Layer**: Outputs a single value (predicted closing price).
+
+The model is trained using:
+- **Loss Function**: Mean Squared Error (MSE).
+- **Optimizer**: Adam optimizer.
+
+The trained model is saved as `model.h5` for reuse.
+
+---
+
+## **Pipeline Workflow**
+
+1. **Data Loading and Preprocessing**:
+   - The dataset is downloaded using `yfinance`.
+   - Features and Target are normalized and structured into sequences for training.
+
+2. **Model Training**:
+   - The LSTM model is built, compiled, and trained on the prepared dataset.
+   - Training progress is monitored using the loss function.
+
+3. **Prediction**:
+   - The model predicts the next day's-minutes' closing price based on recent data.
+   - Predicted values are denormalized to the original price scale.
+
+4. **Visualization**:
+   - A graph is plotted to compare the predicted value with actual closing prices.
+
+5. **Evaluation**:
+   - The model's performance is measured using metrics like MAE, MSE, RMSE, and MAPE.
+
+---
+
+## **Evaluation Metrics**
+
+The following metrics are calculated to assess the model's accuracy:
+
+1. **Mean Absolute Error (MAE)**: Measures the average magnitude of errors in the predictions.
+2. **Mean Squared Error (MSE)**: Penalizes larger errors more than smaller ones.
+3. **Root Mean Squared Error (RMSE)**: Provides a measure of error in the same units as the target variable.
+4. **Mean Absolute Percentage Error (MAPE)**: Expresses prediction errors as a percentage of actual values.
+
+---
+
+## **Usage**
+
+### **Requirements**
+Ensure the following Python libraries are installed:
+- `yfinance`
+- `numpy`
+- `pandas`
+- `matplotlib`
+- `tensorflow`
+- `scikit-learn`
+
+### **Running the Notebook**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Seba-Lucc/Time-series-analysis---Crypto-asset.git
+   cd LSTM
+
+2. Clone the repository:
+   ```bash
+   pip install -r requirements.txt
+
+3. Open the notebook:
+   ```bash
+   jupyter notebook LSTM.ipynb
+
+4. Run all cells in sequence to reproduce the analysis.
+
+---
+
+## **Future Improvements**
+
+To enhance the model’s accuracy and usability, the following improvements can be made:
+1.	Feature Engineering:
+	•	Include additional predictors like trading volume, moving averages, and other technical indicators.
+
+2.	Model Optimization:
+	•	Experiment with hyperparameter tuning, deeper LSTM layers, and dropout layers.
+
+3.	Extended Data:
+	•	Use a larger dataset with more historical data points for training.
+
+4.	Model Ensemble:
+	•	Combine LSTM with other models (e.g., GRU or Transformer models) for improved predictions.
+
+---
+
+## **Contributions**
+Contributions to this project are welcome! Feel free to open an issue or submit a pull request to suggest improvements or fix bugs.
+
+---
+
+## **License**
+This project is licensed under the Apache License. See the LICENSE file for details
