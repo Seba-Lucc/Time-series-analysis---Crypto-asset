@@ -3,6 +3,8 @@ ACKNOWLEDGMENTS
 The authors of this project acknowledge the use of open-source tools and resources that were instrumental in the development of this work. Specifically, we would like to thank:
 	•	yfinance, which served as a reference library for datasets and preliminary exploratory analyses.
 	•	ChatGPT, a Generative AI platform, which supported coding assistance, debugging, and documentation.
+	•	https://www.youtube.com/watch?v=-_2wOrEuFaM&t=674s: ARIMA
+	•	https://www.youtube.com/watch?v=lhrCz6t7rmQ&t=1s: LSTM
 
 The project focuses on comparing statistical (ARIMA) and deep learning (LSTM) methods for time series analysis of Bitcoin’s historical prices.
 
